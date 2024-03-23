@@ -7,7 +7,7 @@ pipeline{
     stages{
         stage('checkout scm'){
             steps{
-                git branch:'main',url:'git@github.com:Arman-Devops/Petclinic.git'
+                git branch:'main',url:'https://github.com/Arman-Devops/Petclinic.git'
             }
         }
         stage('compile'){
