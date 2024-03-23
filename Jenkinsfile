@@ -20,5 +20,14 @@ pipeline{
                 sh 'mvn clean package'
             }
         }
+        stage('deploy to tomcat'){
+            steps{
+                deploy adapters: [tomcat9(credentialsId: 'tomcat-cred',
+                 path: '',
+                 url: 'http://52.2.10.18:8080')],
+                 contextPath: null,
+                 war: '**/*.war'
+            }
+        }
     }
 }
